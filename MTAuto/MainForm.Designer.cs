@@ -32,9 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.Menu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemMain = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemQuit = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,34 +44,36 @@
             this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
             this.notifyIcon.Text = "凌科";
             this.notifyIcon.Visible = true;
+            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
             // 
             // Menu
             // 
             this.Menu.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.设置ToolStripMenuItem,
-            this.退出ToolStripMenuItem});
+            this.MenuItemMain,
+            this.MenuItemSettings,
+            this.MenuItemQuit});
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(161, 112);
+            this.Menu.Size = new System.Drawing.Size(245, 156);
             // 
-            // toolStripMenuItem1
+            // MenuItemMain
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(160, 36);
-            this.toolStripMenuItem1.Text = "主界面";
+            this.MenuItemMain.Name = "MenuItemMain";
+            this.MenuItemMain.Size = new System.Drawing.Size(244, 36);
+            this.MenuItemMain.Text = "主界面";
             // 
-            // 设置ToolStripMenuItem
+            // MenuItemSettings
             // 
-            this.设置ToolStripMenuItem.Name = "设置ToolStripMenuItem";
-            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(160, 36);
-            this.设置ToolStripMenuItem.Text = "设置";
+            this.MenuItemSettings.Name = "MenuItemSettings";
+            this.MenuItemSettings.Size = new System.Drawing.Size(244, 36);
+            this.MenuItemSettings.Text = "设置";
             // 
-            // 退出ToolStripMenuItem
+            // MenuItemQuit
             // 
-            this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(160, 36);
-            this.退出ToolStripMenuItem.Text = "退出";
+            this.MenuItemQuit.Name = "MenuItemQuit";
+            this.MenuItemQuit.Size = new System.Drawing.Size(244, 36);
+            this.MenuItemQuit.Text = "退出";
+            this.MenuItemQuit.Click += new System.EventHandler(this.MenuItemQuit_Click);
             // 
             // MainForm
             // 
@@ -84,6 +86,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "凌科自动测试";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Menu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -93,9 +96,9 @@
 
         private System.Windows.Forms.NotifyIcon notifyIcon;
         private System.Windows.Forms.ContextMenuStrip Menu;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem 设置ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemMain;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemSettings;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemQuit;
     }
 }
 
